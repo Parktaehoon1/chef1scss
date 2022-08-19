@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline-style: none; */
 }
 
 ul,
@@ -497,50 +496,136 @@ body {
   position: relative;
   display: block;
 }
-.service .service-wrap .service-swiper .service-title {
+.service .service-wrap .service-swiper .service-top {
+  position: relative;
+  display: block;
+}
+.service .service-wrap .service-swiper .service-top .service-title {
   position: relative;
   display: block;
   font-size: 80px;
   font-weight: 700;
 }
+.service .service-wrap .service-swiper .service-top .sw-service-control {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  overflow: hidden;
+}
+.service .service-wrap .service-swiper .service-top .sw-service-control .sw-service-prev {
+  position: relative;
+  display: block;
+  float: left;
+  width: 50px;
+  height: 15px;
+  background: url("../images/service_arrow_prev.svg") no-repeat center;
+  background-size: cover;
+  border: 0;
+  margin-right: 20px;
+  opacity: 0.15;
+}
+.service .service-wrap .service-swiper .service-top .sw-service-control .sw-service-next {
+  position: relative;
+  display: block;
+  float: right;
+  width: 50px;
+  height: 15px;
+  background: url("../images/service_arrow_next.svg") no-repeat center;
+  background-size: cover;
+  border: 0;
+}
+.service .service-wrap .service-swiper .service-top .sw-service-control .swiper-button-disabled {
+  opacity: 0.15;
+}
 .service .service-wrap .service-swiper .sw-service {
   position: relative;
   z-index: 1;
+  overflow: visible;
 }
 .service .service-wrap .service-swiper .swiper-wrapper .swiper-slide {
   position: relative;
+  transition-property: margin-right;
+  transition-duration: 0.7s;
 }
 .service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box {
   position: relative;
   display: block;
+  width: 500px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box .swiper-box a {
-  position: relative;
-  display: block;
-}
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box .swiper-box a .swiper-box a img {
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box .swiper-box img {
   position: relative;
   display: block;
   width: 100%;
 }
 .service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc {
   position: absolute;
-  left: 500px;
+  left: 470px;
   top: 0;
   overflow: hidden;
   padding-left: 80px;
+  width: 535px;
+  height: 500px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-box-title {
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-title-box {
+  overflow: hidden;
+}
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-title-box .swiper-box-title {
   position: relative;
   display: block;
+  font-size: 60px;
+  line-height: 1.4em;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 105px;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+  transform: translateY(200%);
 }
 .service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-box-nb {
   position: relative;
   display: block;
+  font-size: 30px;
+  line-height: 1.2em;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-box-txt {
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-txt-box {
+  overflow: hidden;
+}
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-txt-box .swiper-box-txt {
   position: relative;
   display: block;
+  font-size: 40px;
+  line-height: 1.4em;
+  color: #000;
+  font-weight: bold;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+  transform: translateY(200%);
+}
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-box-txt-bottom {
+  font-size: 20px;
+  line-height: 1.6em;
+  color: #000;
+  margin-top: 27px;
+}
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide-active {
+  margin-right: 570px;
+}
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide-active .swiper-box-desc .swiper-ani-title-box .swiper-box-title {
+  transform: translateY(0);
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+  transition-property: transform;
+}
+.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide-active .swiper-box-desc .swiper-ani-txt-box .swiper-box-txt {
+  transform: translateY(0);
+  transition-duration: 0.5s;
+  transition-delay: 0.5s;
+  transition-property: transform;
 }
 
 /* 상품 */
