@@ -33,6 +33,13 @@ $(document).ready(function () {
     })
 
 
+    new Swiper('.sw-service', {
+        loop:true,  
+        speed: 500,
+        slidePerview: 3,
+
+    })
+
 })
 
 window.onload = function () {
