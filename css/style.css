@@ -1,0 +1,506 @@
+@charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline-style: none; */
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+a {
+  color: #777;
+  text-decoration: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Pretendard", "Malgun Gothic", "Dotum", "AppleGothic", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.45px;
+  overflow-x: hidden;
+}
+
+/* 공통영역 */
+.clearfix::after {
+  content: "";
+  position: relative;
+  display: block;
+  clear: both;
+}
+
+.inner {
+  position: relative;
+  display: block;
+  width: 1600px;
+  margin: 0 auto;
+}
+
+/* 전체 */
+.wrap {
+  position: relative;
+  display: block;
+  padding-top: 250px;
+}
+
+/* 헤더 */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  padding: 25px 0;
+  background-color: #fff;
+  z-index: 9999;
+  transition: all 0.5s;
+}
+.header .header-nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header .header-nav .header-btn-open {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) scale(1);
+  display: block;
+  width: 35px;
+  height: 14px;
+  background: url("../images/header_btn.svg") no-repeat center;
+  background-size: cover;
+  border: 0;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition-property: opacity, visibility, transform;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+}
+.header .header-nav .header-btn-open::after {
+  content: "Menu";
+  position: absolute;
+  top: 50%;
+  right: -70px;
+  transform: translateY(-50%);
+  color: #000;
+  font-size: 22px;
+  line-height: 14px;
+  font-weight: bold;
+  margin-top: 1px;
+}
+.header .header-nav .header-btn-close {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 36px;
+  height: 36px;
+  background: url("../images/header_btn_close.svg") no-repeat center;
+  background-size: cover;
+  border: 0;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility, transform;
+  transform: translateY(-50%) scale(0);
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+}
+.header .header-nav .header-close {
+  position: fixed;
+  top: -200px;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  padding: 25px 0;
+  background-color: #fff;
+  z-index: 9999;
+  transition: all 0.5s;
+}
+.header .header-nav .hd-btn-open {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%) scale(0);
+}
+.header .header-nav .hd-btn-close {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+.header .logo {
+  margin: 0 auto;
+  width: 90px;
+}
+.header .logo .header-logo {
+  position: relative;
+  display: block;
+  font-size: 0;
+  width: 90px;
+  height: 76px;
+  background: url("../images/logo.svg") no-repeat center;
+  background-size: cover;
+}
+.header .header-sitemap {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 178px;
+}
+.header .header-sitemap .sitemap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 12px 30px 12px 0;
+  font-size: 16px;
+  line-height: 1.4em;
+  color: #000;
+  font-weight: bold;
+  position: relative;
+}
+.header .header-sitemap .sitemap-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  -webkit-animation: gowidth 1s ease-in forwards;
+          animation: gowidth 1s ease-in forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+  overflow: hidden;
+}
+.header .header-sitemap .sitemap-bar::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  display: block;
+}
+.header .header-sitemap .sitemap-depth1 {
+  position: absolute;
+  margin-top: 15px;
+  padding: 10px 17px;
+  background: #fff;
+  left: 0;
+  right: 0;
+  display: none;
+  border: 2px solid #000;
+}
+.header .header-sitemap .sitemap-depth1 .sitemap-list .sitemap-list-title {
+  display: block;
+  font-size: 15px;
+  line-height: 14px;
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+.header .header-sitemap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: url("../images/sitemap-arrow.svg") no-repeat center;
+  background-size: cover;
+}
+
+@-webkit-keyframes gowidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes gowidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.main-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 900;
+  background-color: #fff;
+  padding-top: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.4s;
+}
+.main-header .main-nav-title {
+  font-size: 30px;
+  line-height: 1.2em;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+.main-header .main-nav .main-nav-list {
+  margin-top: 45px;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+}
+.main-header .main-nav .main-nav-list .main-nav-title {
+  position: relative;
+  display: block;
+  font-size: 55px;
+  line-height: 1.1em;
+  color: #000000;
+  font-weight: bold;
+}
+
+.main-header-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 어바웃 */
+.about {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  margin-bottom: 80px;
+}
+.about .mainlogobox {
+  position: relative;
+  display: block;
+  height: 98px;
+  overflow: hidden;
+}
+.about .mainlogobox .mainlogo {
+  position: relative;
+  top: 0;
+  display: block;
+  width: 600px;
+  height: 100%;
+  background: url("../images/main_logo.svg") no-repeat center;
+  background-size: cover;
+  font-size: 0;
+  -webkit-animation: goUp 0.5s forwards;
+          animation: goUp 0.5s forwards;
+}
+.about .about-info {
+  position: relative;
+  display: block;
+  height: 80px;
+  margin-top: 48px;
+  font-size: 24px;
+  font-weight: 500;
+  overflow: hidden;
+}
+.about .about-info .about-left {
+  position: relative;
+  top: 0;
+  display: block;
+  height: 100%;
+  float: left;
+  -webkit-animation: goUp 0.5s forwards;
+          animation: goUp 0.5s forwards;
+  overflow: hidden;
+}
+.about .about-info .about-left .about-left p {
+  position: relative;
+  display: block;
+}
+.about .about-info .about-right {
+  position: relative;
+  display: block;
+  float: right;
+}
+.about .about-info .about-right .about-btn {
+  position: relative;
+  display: block;
+  width: 230px;
+  height: 0;
+  text-align: center;
+  /* border: 2px solid #000; */
+  padding: 18px 24px;
+  white-space: nowrap;
+  -webkit-animation: goheight 1s ease-in forwards;
+          animation: goheight 1s ease-in forwards;
+}
+.about .about-info .about-right .about-btn .brand {
+  font-size: 20px;
+  color: #000;
+  white-space: nowrap;
+}
+.about .about-info .about-right .about-btn .brand::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: gowidth 1s forwards;
+          animation: gowidth 1s forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.about .about-info .about-right .about-btn .brand::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-animation: gowidth 1s forwards;
+          animation: gowidth 1s forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.about .about-info .about-right .about-btn::before {
+  content: "";
+  width: 2px;
+  height: 0%;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: goheight 1s forwards;
+          animation: goheight 1s forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.about .about-info .about-right .about-btn::after {
+  content: "";
+  width: 2px;
+  height: 0%;
+  background-color: #000;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-animation: goheight 1s forwards;
+          animation: goheight 1s forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+
+@-webkit-keyframes goUp {
+  from {
+    transform: translateY(102%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes goUp {
+  from {
+    transform: translateY(102%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes goheight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes goheight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes gowidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+/* 비주얼 */
+.visual {
+  height: 730px;
+  position: relative;
+  overflow: hidden;
+}
+.visual .visual-bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 135%;
+  display: block;
+  /* padding: 500px 0; */
+  background: url("../images/visualbackground.png") no-repeat center;
+  background-size: cover;
+}
+.visual .visual-bg .visual-txt {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  font-size: 112px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* 서비스 */
+.service {
+  position: relative;
+  display: block;
+}
+
+/* 상품 */
+.product {
+  position: relative;
+  display: block;
+}
+
+/* 문의 */
+.inquiry {
+  position: relative;
+  display: block;
+}
+
+/* 푸터 */
+.footer {
+  position: relative;
+  display: block;
+}/*# sourceMappingURL=style.css.map */
