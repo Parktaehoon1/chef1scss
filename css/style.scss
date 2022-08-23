@@ -132,18 +132,7 @@ body {
 			transition-delay: 0s;
 		}
 
-		.header-close {
-			position: fixed;
-			top: -200px;
-			left: 0;
-			right: 0;
-			display: block;
-			width: 100%;
-			padding: 25px 0;
-			background-color: #fff;
-			z-index: 9999;
-			transition: all 0.5s;
-		}
+
 
 
 		.hd-btn-open {
@@ -256,7 +245,18 @@ body {
 		background-size: cover;
 	}
 }
-
+.header-close {
+	position: fixed;
+	top: -200px;
+	left: 0;
+	right: 0;
+	display: block;
+	width: 100%;
+	padding: 25px 0;
+	background-color: #fff;
+	z-index: 9999;
+	transition: all 0.5s;
+}
 
 @keyframes gowidth {
 	from {
@@ -282,7 +282,6 @@ body {
 	visibility: hidden;
 	transition-property: opacity, visibility;
 	transition-duration: 0.4s;
-
 	.main-nav-title {
 		font-size: 30px;
 		line-height: 1.2em;
@@ -308,8 +307,8 @@ body {
 			}
 		}
 	}
-
 }
+
 
 .main-header-open {
 	opacity: 1;
@@ -497,7 +496,6 @@ body {
 		background: url('../images/visualbackground.png') no-repeat center top;
 		background-size: cover;
 		background-attachment: fixed;
-		background-position: 0px 40px;
 	}
 
 	.visual-txt {
