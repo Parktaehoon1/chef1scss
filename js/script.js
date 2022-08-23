@@ -48,13 +48,8 @@ $(document).ready(function () {
     let swPrev = $('.sw-service-prev');
     let swNext = $('.sw-service-next');
 
-    swPrev.click(function(){
-        swPrev.removeClass('sw-service-btn')
-        swPrev.toggleClass('sw-service-btn')
-    })
-    swNext.click(function(){
-        swNext.toggleClass('sw-service-btn')
-    })
+    swPrev.click(function () {})
+    swNext.click(function () {})
 })
 
 window.onload = function () {
@@ -70,4 +65,10 @@ window.onload = function () {
     //         height  : null,     /*  선택. max-height를 지정한다. 만약 null이면 알아서 잰다. */
     //         tolerance: 0       /*  글이 넘치면 이만큼쯤 height를 늘린다 */
     //       });
+
+
+
+
+
+
 }
