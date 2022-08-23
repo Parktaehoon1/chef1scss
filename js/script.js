@@ -76,7 +76,7 @@ $(document).ready(function () {
     swNext.click(function () {})
 
 
-    (function () {
+    let fn = (function () {
         var controller = new ScrollMagic.Controller({
             globalSceneOptions: {
                 triggerHook: ".productbanner"
