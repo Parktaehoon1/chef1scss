@@ -74,13 +74,6 @@ $(document).ready(function () {
             }
         });
     }
-    swPrev.click(function () {
-        swPrev.removeClass('sw-service-btn')
-        swPrev.toggleClass('sw-service-btn')
-    })
-    swNext.click(function () {
-        swNext.toggleClass('sw-service-btn')
-    })
 
 
     let fn = (function () {
@@ -144,5 +137,26 @@ window.onload = function () {
     //         body.style.overflowY = "auto"
     //     }
     // });
+    let swiperButton = document.querySelectorAll('.sw-service-control > button')
+    let swiperButtonPrev = document.querySelector('.sw-service-prev');
+    let swiperButtonNext = document.querySelector('.sw-service-next');
+    console.log(swiperButton);
+    console.log(swiperButtonPrev);
+    console.log(swiperButtonNext);
+
+
+    let ha = swiperButtonPrev.getAttribute('aria-disabled');
+    console.log(ha);
+    if(swiperButtonPrev.getAttribute('aria-disabled')){
+        this.classList.add('.swiper-button-able')
+    } else {
+        this.classList.add('.swiper-button-disabled')
+    }
+    if(swiperButtonNext.getAttribute('aria-disabled')){
+        this.classList.add('.swiper-button-able')
+    } else {
+        this.classList.add('.swiper-button-disabled')
+    }
+    
 
 }
