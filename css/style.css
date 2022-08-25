@@ -650,6 +650,7 @@ body {
   background-size: cover;
   border: 0;
   margin-right: 20px;
+  opacity: 0.15;
 }
 .service .service-wrap .service-swiper .service-top .sw-service-control .sw-service-next {
   position: relative;
@@ -664,95 +665,114 @@ body {
 .service .service-wrap .service-swiper .service-top .sw-service-control .swiper-button-disabled {
   opacity: 0.15;
 }
-.service .service-wrap .service-swiper .sw-service {
+.service .service-wrap .service-swiper .slide-section {
+  width: 500px;
+}
+.service .service-wrap .service-swiper .slide-section .sw-service {
   position: relative;
   z-index: 1;
   overflow: visible;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide {
-  position: relative;
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item {
+  padding: 0 20px;
+  width: 500px;
+  display: block !important;
   transition-property: margin-right;
   transition-duration: 0.7s;
+  margin-right: 30px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box {
-  position: relative;
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .service-box {
   display: block;
+}
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .service-box .swiper-box {
   width: 500px;
+  line-height: 0;
+  float: left;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box .swiper-box img {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc {
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .swiper-box-desc {
+  width: 29.6875vw;
   position: absolute;
-  left: 470px;
+  left: 500px;
   top: 0;
   overflow: hidden;
   padding-left: 80px;
-  width: 535px;
-  height: 500px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-title-box {
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .swiper-box-desc .swiper-ani-title-box {
   overflow: hidden;
+  margin-bottom: 105px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-title-box .swiper-box-title {
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .swiper-box-desc .swiper-ani-title-box .swiper-box-title {
   position: relative;
   display: block;
   font-size: 60px;
   line-height: 1.4em;
   color: #000;
   font-weight: bold;
-  margin-bottom: 105px;
-  transform: translateY(200%);
   transition-property: transform;
   transition-duration: 0.5s;
   transition-delay: 0.5s;
+  transform: translateY(200%);
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-box-nb {
-  position: relative;
-  display: block;
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .swiper-box-desc .sw-service-text .swiper-box-nb {
   font-size: 30px;
   line-height: 1.2em;
   color: #000;
   font-weight: bold;
   margin-bottom: 10px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-txt-box {
-  overflow: hidden;
-}
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-ani-txt-box .swiper-box-txt {
-  position: relative;
-  display: block;
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .swiper-box-desc .sw-service-text .swiper-ani-txt-box {
   font-size: 40px;
   line-height: 1.4em;
   color: #000;
   font-weight: bold;
+  overflow: hidden;
+}
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .swiper-box-desc .sw-service-text .swiper-ani-txt-box .swiper-box-txt {
   transform: translateY(200%);
-  transition-property: transform;
   transition-duration: 0.5s;
   transition-delay: 0.5s;
+  transition-property: transform;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide .swiper-box-desc .swiper-box-txt-bottom {
-  font-size: 20px;
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item .swiper-box-desc .sw-service-text .swiper-box-txt-bottom {
+  font-size: 1.041666vw;
   line-height: 1.6em;
   color: #000;
   margin-top: 27px;
+  letter-spacing: 1px;
+  padding-right: 20px;
+  word-break: keep-all;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide-active {
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .service-item::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .swiper-slide-active {
   margin-right: 570px;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide-active .swiper-box-desc .swiper-ani-title-box .swiper-box-title {
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .swiper-slide-active .swiper-box-desc .swiper-ani-title-box .swiper-box-title {
   transform: translateY(0);
   transition-duration: 0.5s;
   transition-delay: 0.5s;
   transition-property: transform;
 }
-.service .service-wrap .service-swiper .swiper-wrapper .swiper-slide-active .swiper-box-desc .swiper-ani-txt-box .swiper-box-txt {
-  transform: translateY(0);
+.service .service-wrap .service-swiper .slide-section .sw-service .swiper-wrapper .swiper-slide-active .sw-service-text .swiper-ani-txt-box .swiper-box-txt {
+  transform: translateY(0) !important;
   transition-duration: 0.5s;
   transition-delay: 0.5s;
   transition-property: transform;
+}
+
+body:not(.is-StartSlide) .sw-service:first-child {
+  margin-right: 0;
+}
+
+body:not(.is-StartSlide) .sw-service:first-child .swiper-box-nb {
+  opacity: 1;
+}
+
+body:not(.is-StartSlide) .sw-service:first-child .swiper-box-txt-bottom {
+  opacity: 1;
 }
 
 /* 상품 */

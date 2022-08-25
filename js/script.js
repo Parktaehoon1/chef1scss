@@ -56,24 +56,31 @@ $(document).ready(function () {
     })
 
 
-
-    new Swiper('.sw-service', {
-        // loop:true,  //루프해제하면 안돌아감 ㅠ
-        speed: 500,
-        slidesPerView: 3,
-        parallax: true,
-        direction: 'horizontal',
-        navigation: {
-            prevEl: '.sw-service-prev',
-            nextEl: '.sw-service-next'
-        },
+    if ($('.slide-section').length > 0) {
+        var SlideSection = new Swiper(".sw-service", {
+            observer: true,
+            observeParents: true,
+            watchOverflow: true,
+            slidesPerView: 1,
+            speed: 600,
+            navigation: {
+                nextEl: ".sw-service-next",
+                prevEl: ".sw-service-prev",
+            },
+            on: {
+                slideChangeTransitionStart: function () {
+                    $('body').addClass('is-StartSlide');
+                }
+            }
+        });
+    }
+    swPrev.click(function () {
+        swPrev.removeClass('sw-service-btn')
+        swPrev.toggleClass('sw-service-btn')
     })
-
-    let swPrev = $('.sw-service-prev');
-    let swNext = $('.sw-service-next');
-
-    swPrev.click(function () {})
-    swNext.click(function () {})
+    swNext.click(function () {
+        swNext.toggleClass('sw-service-btn')
+    })
 
 
     let fn = (function () {
