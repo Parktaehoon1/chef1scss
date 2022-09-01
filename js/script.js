@@ -160,3 +160,32 @@ window.onload = function () {
     
 
 }
+
+
+    let rememberScY = $(window).scrollTop();
+    // 메뉴 나타남
+    new Waypoint({
+        element: $('.notice'),
+        handler: function (direction) {
+          if (direction == 'down') {
+            header.css('top', '-110px');
+            header.addClass('header-scroll-790');
+  
+            if (temp > rememberScY) {
+              // console.log('아래로 화면 이동했다.')
+              //메뉴가 숨겨진다.
+              header.css('top', '-110px');
+            } else {
+              // console.log('위로 화면 이동했다.');
+              // 메뉴가 펼쳐진다.
+              header.css('top', '0px');
+            }
+            rememberScY = temp;
+  
+          } else if (direction == 'up') {
+            header.css('top', '0px');
+            header.addClass('header-scroll-790');
+          }
+        },
+        offset: '0%'
+      });
