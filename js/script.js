@@ -1,26 +1,26 @@
 $(document).ready(function () {
-    let header = $('.header')
-    $(window).scroll(function () {
-        let temp = $(window).scrollTop();
-        if (temp < 350) {
-            header.removeClass('header-close')
-        }
-    });
 
-    $(window).on('mousewheel', function (e) {
-        let wheel = e.originalEvent.wheelDelta;
+    // $(window).scroll(function () {
+    //     let temp = $(window).scrollTop();
+    //     if (temp < 350) {
+    //         header.removeClass('header-close')
+    //     }
+    // });
 
-        //스크롤값을 가져온다.
-        if (wheel > 0) {
-            //스크롤 올릴때
-            header.removeClass('header-close');
-            // console.log("올라간다")
-        } else if (wheel < 350) {
-            //스크롤 내릴때
-            header.addClass('header-close');
-            // console.log("내려간다")
-        }
-    });
+    // $(window).on('mousewheel', function (e) {
+    //     let wheel = e.originalEvent.wheelDelta;
+
+    //     //스크롤값을 가져온다.
+    //     if (wheel > 0) {
+    //         //스크롤 올릴때
+    //         header.removeClass('header-close');
+    //         // console.log("올라간다")
+    //     } else if (wheel < 350) {
+    //         //스크롤 내릴때
+    //         header.addClass('header-close');
+    //         // console.log("내려간다")
+    //     }
+    // });
 
     let headerOpen = $('.header-btn-open');
     let headerClose = $('.header-btn-close');
@@ -97,7 +97,66 @@ $(document).ready(function () {
     }())
 
 
+    let header = $('.header');
+    let rememberScY = $(window).scrollTop();
+    console.log(rememberScY)
+    // 메뉴 나타남
+    // new Waypoint({
+    //     element: $('.header'),
+    //     handler: function (direction) {
+    //       if (direction == 'down') {
+    //         header.css('top', '0');
+  
+    //         if (temp > rememberScY) {
+    //           // console.log('아래로 화면 이동했다.')
+    //           //메뉴가 숨겨진다.
+    //           header.css('top', '-150px');
+    //         } else {
+    //           // console.log('위로 화면 이동했다.');
+    //           // 메뉴가 펼쳐진다.
+    //           header.css('top', '-150px');
+    //         }
+    //         rememberScY = temp;
+  
+    //       } else if (direction == 'up') {
+    //         header.css('top', '0px');
+    //       }
+    //     },
+    //     offset: '0%'
+    //   });
+      
+    // 메뉴 나타남
+    let temp = 300;
+    new Waypoint({
+        element: $('.header'),
+        handler: function (direction) {
+          if (direction == 'down') {
+            header.css('top', '-150px');
+            header.addClass('header-open');
+  
+            if (temp > rememberScY) {
+              console.log('아래로 화면 이동했다.')
+              //메뉴가 숨겨진다.
+              header.css('top', '-150px');
+            } else {
+              console.log('위로 화면 이동했다.');
+              // 메뉴가 펼쳐진다.
+              header.css('top', '0px');
+            }
+            rememberScY = temp;
+  
+          } else if (direction == 'up') {
+            header.css('top', '0px');
+            header.addClass('header-down');
+
+          }
+        },
+        offset: '0%'
+      });
+
 })
+
+
 
 window.onload = function () {
     AOS.init();
@@ -145,47 +204,6 @@ window.onload = function () {
     console.log(swiperButtonNext);
 
 
-    let ha = swiperButtonPrev.getAttribute('aria-disabled');
-    console.log(ha);
-    if(swiperButtonPrev.getAttribute('aria-disabled')){
-        this.classList.add('.swiper-button-able')
-    } else {
-        this.classList.add('.swiper-button-disabled')
-    }
-    if(swiperButtonNext.getAttribute('aria-disabled')){
-        this.classList.add('.swiper-button-able')
-    } else {
-        this.classList.add('.swiper-button-disabled')
-    }
-    
-
 }
 
 
-    let rememberScY = $(window).scrollTop();
-    // 메뉴 나타남
-    new Waypoint({
-        element: $('.notice'),
-        handler: function (direction) {
-          if (direction == 'down') {
-            header.css('top', '-110px');
-            header.addClass('header-scroll-790');
-  
-            if (temp > rememberScY) {
-              // console.log('아래로 화면 이동했다.')
-              //메뉴가 숨겨진다.
-              header.css('top', '-110px');
-            } else {
-              // console.log('위로 화면 이동했다.');
-              // 메뉴가 펼쳐진다.
-              header.css('top', '0px');
-            }
-            rememberScY = temp;
-  
-          } else if (direction == 'up') {
-            header.css('top', '0px');
-            header.addClass('header-scroll-790');
-          }
-        },
-        offset: '0%'
-      });
