@@ -1,26 +1,29 @@
 $(document).ready(function () {
     let header = $('.header');
     new Waypoint({
-        element:$('.about-info'),
-        handler: function(direction){
-            if(direction == 'down'){
+        element: $('.about-info'),
+        handler: function (direction) {
+            if (direction == 'down') {
                 header.css('top', -150);
                 header.addClass('hide');
-            } else if (direction == 'up'){
+            } else if (direction == 'up') {
                 header.css('top', 0);
                 header.removeClass('hide');
             }
         },
         offset: '20%'
     })
-
-    let scY = $(window).scrollTop();
-    $(window).scroll(function(){
-        let tempY = $(window).scrollTop();
+    let scY = $(window).scrollTop(); // 스크린전체에서의 Y축의 값
+    console.log("scY", scY)
+    $(window).scroll(function () {
+        let tempY = $(window).scrollTop(); // 스크롤을 내렸을떄 나타나는 Y축의 값
+        console.log("tempY", tempY)
 
         let temp = header.hasClass('hide');
-        if(temp == true){
-            if(tempY - scY > 0){
+        /* 위 waypoint에서 스크롤을 내렸을때 hide라는 addClass를 주었기때문에  그 클래스 값으로 
+        비교하여서 header를 올릴지 내릴지 정함*/
+        if (temp == true) {
+            if (tempY - scY > 0) { // 양수가 나오면 스크롤이 아래로 떨어진 의미.
                 header.css('top', -150);
             } else {
                 header.css('top', 0);
@@ -50,14 +53,6 @@ $(document).ready(function () {
         modalWrap.stop().fadeOut(500);
     });
 
-
-
-
-
-
-
-
-
     let headerOpen = $('.header-btn-open');
     let headerClose = $('.header-btn-close');
     let siteMap = $('.sitemap');
@@ -76,13 +71,10 @@ $(document).ready(function () {
         mainHeader.removeClass('main-header-open');
     })
 
-
-
     siteMap.click(function (event) {
         event.preventDefault();
         siteMapList.stop().slideToggle(200);
     })
-
 
     if ($('.slide-section').length > 0) {
         var SlideSection = new Swiper(".sw-service", {
@@ -103,14 +95,12 @@ $(document).ready(function () {
         });
     }
 
-
     let fn = (function () {
         var controller = new ScrollMagic.Controller({
             globalSceneOptions: {
                 triggerHook: ".productbanner"
             }
         });
-
         new ScrollMagic
             .Scene({
                 triggerElement: ".productimg",
@@ -122,22 +112,10 @@ $(document).ready(function () {
             })
             .addTo(controller);
     }())
-
-
 });
 
 
 window.onload = function () {
     AOS.init();
-
-
-
-    let swiperButton = document.querySelectorAll('.sw-service-control > button')
-    let swiperButtonPrev = document.querySelector('.sw-service-prev');
-    let swiperButtonNext = document.querySelector('.sw-service-next');
-    console.log(swiperButton);
-    console.log(swiperButtonPrev);
-    console.log(swiperButtonNext);
-
 
 }
