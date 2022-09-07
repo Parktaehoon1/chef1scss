@@ -243,24 +243,18 @@ body {
 
 
 .header-close {
-	position: fixed;
-	top: -200px;
-	left: 0;
-	right: 0;
-	display: block;
-	width: 100%;
-	padding: 25px 0;
-	background-color: #fff;
-	z-index: 9999;
-	transition: all 0.5s;
+	top: -150px;
+
 }
 
 .header-down{
-	transform:translateY(0%);
+	// transform:translateY(0%);
+	top: 0;
 	background-color:#fff;
 }
 .header-open{
-	transform:translateY(-100%);
+	top: -150px;
+	// transform:translateY(-100%);
 }
 
 @keyframes gowidth {
