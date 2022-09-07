@@ -1,4 +1,50 @@
 $(document).ready(function () {
+  // 모달창
+  let modalWrap = $('.modal-wrap');
+  let modalClose = $('.modal-close');
+  
+
+  modalClose.click(function(){
+    modalWrap.stop().fadeOut(500)
+    // 추가기능 : 스크롤바 살리기
+    // $('html').css('overflow', 'auto');
+  });
+  let modalMain = $('.modal-main')
+  //내용 배경 클릭
+  modalMain.click(function(event){
+    // 클릭 정보 전달 막기
+    event.stopPropagation();
+  });
+  //전체 배경 클릭
+  modalWrap.click(function(){
+    modalWrap.stop().fadeOut(500);
+    // 추가기능 : 스크롤바 살리기
+    // $('html').css('overflow', 'auto');
+  });
+  
+
+
+    // $(window).scroll(function () {
+    //     let temp = $(window).scrollTop();
+    //     if (temp < 350) {
+    //         header.removeClass('header-close')
+    //     }
+    // });
+
+    // $(window).on('mousewheel', function (e) {
+    //     let wheel = e.originalEvent.wheelDelta;
+
+    //     //스크롤값을 가져온다.
+    //     if (wheel > 0) {
+    //         //스크롤 올릴때
+    //         header.removeClass('header-close');
+    //         // console.log("올라간다")
+    //     } else if (wheel < 350) {
+    //         //스크롤 내릴때
+    //         header.addClass('header-close');
+    //         // console.log("내려간다")
+    //     }
+    // });
 
     let headerOpen = $('.header-btn-open');
     let headerClose = $('.header-btn-close');
@@ -42,14 +88,14 @@ $(document).ready(function () {
             slidesPerView: 1,
             speed: 600,
             navigation: {
-                nextEl: ".sw-service-next",
                 prevEl: ".sw-service-prev",
+                nextEl: ".sw-service-next"
             },
-            on: {
-                slideChangeTransitionStart: function () {
-                    $('body').addClass('is-StartSlide');
-                }
-            }
+            // on: {
+            //     slideChangeTransitionStart: function () {
+            //         $('body').addClass('is-StartSlide');
+            //     }
+            // }
         });
     }
 
@@ -126,8 +172,9 @@ window.onload = function () {
     let header = document.querySelector('.header')
     addEventListener("mousewheel", e => {
         const direction = e.deltaY > 0 ? "Scroll Down" : "Scroll Up";
-        console.log(e.deltaY)
+
         if(direction == "Scroll Up"){
+            // header.style.top = 10;
             header.classList.remove('header-open')
         } else if(direction == "Scroll Down"){
             header.classList.add('header-open')
